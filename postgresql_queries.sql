@@ -50,3 +50,12 @@ GROUP BY employee.last_name;
 -- highlevel summary of employees with same last name
 SELECT COUNT( DISTINCT employee.last_name) AS unique_lastnames , count( DISTINCT employee.emp_no) AS employees, count( DISTINCT employee.emp_no) / COUNT( DISTINCT employee.last_name) AS num_emp_same_last_name
 FROM employee;
+
+-- BONUS
+SELECT titles.title ,  AVG(salary.salary)::float8::numeric::money as avg_salary
+FROM salary
+INNER JOIN employee on salary.emp_no = employee.emp_no
+INNER JOIN titles on employee.emp_no = titles.emp_no
+GROUP BY titles.title;
+
+select * from salary; 
