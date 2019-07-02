@@ -20,9 +20,9 @@ CREATE TABLE dept_emp (
   dept_no VARCHAR(6) NOT NULL,
   from_date DATE NOT NULL,
   to_date DATE,
-  dept_id INTEGER NOT NULL,
+  dept_id INTEGER,
   FOREIGN KEY (dept_id) REFERENCES dept(dept_id),
-  dept_mgr_id INTEGER NOT NULL,
+  dept_mgr_id INTEGER,
   FOREIGN KEY (dept_mgr_id) REFERENCES dept_mgr(dept_mgr_id),
   dept_emp_id SERIAL PRIMARY KEY
 );
@@ -57,3 +57,5 @@ CREATE TABLE salary (
   to_date DATE,
   salary_id SERIAL PRIMARY KEY
 );
+
+SELECT * from employee;
